@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `domains` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `index_domains_on_name` (`name`)
-);
+)type=innodb;
 
 CREATE TABLE IF NOT EXISTS `records` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -36,5 +36,5 @@ CREATE TABLE IF NOT EXISTS `records` (
   FOREIGN KEY (domain_id) REFERENCES domains(id) 
     ON UPDATE CASCADE
     ON DELETE CASCADE
-);
+)type=innodb;
 
